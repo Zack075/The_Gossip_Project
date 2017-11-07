@@ -1,0 +1,26 @@
+<h1>THP GOSSIPS</h1>
+
+<table>
+
+	<tr>
+		<td><em> Glorieux Auteur</em></td>
+		<td><em> Glorieux Contenu </em></td>
+		<td>voir</td>
+		<td>supprimer</td>
+	</tr>
+
+
+<% @gossips.each do |gossip| %>
+
+	<tr>
+		<td><%= gossip.anonymous_author %></td>
+		<td><%= gossip.content %></td>
+		<td><%= link_to "voir", gossip_path(gossip)%></td>
+		<td><%= link_to 'Supprimer', gossip_path(gossip),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+	</tr>
+<% end %>
+</table>
+<p> <%= link_to "Nouvelle rumeur", new_gossip_path%></p>
+<p> <%= link_to "Retour au profile", new_user_session_path%></p>

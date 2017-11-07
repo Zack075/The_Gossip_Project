@@ -1,0 +1,16 @@
+<h1> Modifie ton gossip </h1>
+
+<%= form_tag gossip_path(@id), method: :put do%>
+
+<p>
+	<%= label_tag "content", "Your little secret" %>
+	<%= text_field_tag "content" %>
+</p>
+
+<p>
+	<%= submit_tag "Modifier la rumeur" %>
+</p>
+
+<% end %>
+
+<p> <%= link_to "THP GOSSIPS", gossips_path %></p>
